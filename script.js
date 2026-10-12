@@ -84,11 +84,13 @@ function wire(formId, table, build, okText, contact = "email") {
 }
 
 wire("rsvp-form", "lightened_rsvps", (f, name, email) => ({
-  name, email,
+  name,
+  email: email || null,
+  phone: f.phone.value.trim(),
   guests: Number(f.guests.value) || 1,
   join_chat: f.join_chat.checked,
   is_artist: f.is_artist.checked
-}), "You're on the list. We'll email the address and details before the 24th.");
+}), "You're on the list. We'll text you the address and details before the 24th.", "phone");
 
 wire("book-form", "lightened_inquiries", (f, name, email) => {
   const hours = parseFloat(f.hours.value);
