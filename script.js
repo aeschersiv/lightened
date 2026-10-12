@@ -40,8 +40,9 @@ async function insert(table, row) {
 }
 
 const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+const phoneOk = v => v.replace(/\D/g, "").length >= 10;
 
-function wire(formId, table, build, okText) {
+function wire(formId, table, build, okText, contact = "email") {
   const form = document.getElementById(formId);
   if (!form) return;
   const el = form.elements;
@@ -53,12 +54,17 @@ function wire(formId, table, build, okText) {
     if (el.website && el.website.value) return; // spam trap
     const name = el.name.value.trim();
     const email = el.email.value.trim();
+    const phone = el.phone ? el.phone.value.trim() : "";
+    const contactOk = contact === "phone" ? phoneOk(phone) && (!email || emailOk(email)) : emailOk(email);
+    const contactEl = contact === "phone" && !phoneOk(phone) ? el.phone : el.email;
     el.name.setAttribute("aria-invalid", String(!name));
-    el.email.setAttribute("aria-invalid", String(!emailOk(email)));
-    if (!name || !emailOk(email)) {
-      status.textContent = !name ? "Add your name so we know who's coming." : "Check your email address. We send your confirmation there.";
+    contactEl.setAttribute("aria-invalid", String(!contactOk));
+    if (!name || !contactOk) {
+      status.textContent = !name ? "Add your name so we know who you are."
+        : contact === "phone" && !phoneOk(phone) ? "Add a mobile number with area code so James can text you."
+        : "Check your email address. We send your confirmation there.";
       status.classList.add("err");
-      (!name ? el.name : el.email).focus();
+      (!name ? el.name : contactEl).focus();
       return;
     }
     button.disabled = true;
@@ -89,11 +95,12 @@ wire("book-form", "lightened_inquiries", (f, name, email) => {
   const clean = v => (v || "").trim() || null;
   return {
     kind: f.kind.value,
-    name, email,
+    name,
+    email: email || null,
     phone: clean(f.phone.value),
     project: clean(f.project.value),
     preferred_dates: clean(f.preferred_dates.value),
     hours: Number.isFinite(hours) && hours >= 1 && hours <= 80 ? hours : null,
     message: clean(f.message.value)
   };
-}, "Request sent. James will reach out to confirm your time and send the booking-fee link.");
+}, "Request sent. James will text you to confirm your time and send the booking-fee link.", "phone");
