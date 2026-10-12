@@ -90,7 +90,7 @@ wire("rsvp-form", "lightened_rsvps", (f, name, email) => ({
   guests: Number(f.guests.value) || 1,
   join_chat: f.join_chat.checked,
   is_artist: f.is_artist.checked
-}), "You're on the list. We'll text you the address and details before the 24th.", "phone");
+}), "You're on the list. We'll text you the address on the day of the show.", "phone");
 
 wire("book-form", "lightened_inquiries", (f, name, email) => {
   const hours = parseFloat(f.hours.value);
