@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-era="70s">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lightened Productions | Recording studio in South Austin</title>
+  <meta name="description" content="Lightened Productions is a laid-back, artist-forward recording studio in South Austin. Engineer included, gear for every era from the 60s to the 2000s. House show and live recording Saturday, October 24.">
+  <meta property="og:title" content="Lightened Productions">
+  <meta property="og:description" content="A recording studio in South Austin for rock and roll, indie, and whatever you're making. House show Saturday, October 24.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lightened.org/">
+  <meta name="theme-color" content="#1c1828">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <a class="mark" href="#top" aria-label="Lightened Productions, home">Lightened</a>
+    <nav aria-label="Main">
+      <a href="#show">House show</a>
+      <a href="#studio">Studio</a>
+      <a href="#rates">Rates</a>
+      <a class="nav-cta" href="#book">Book time</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="glow" aria-hidden="true"></div>
+      <p class="kicker">Recording studio in South Austin</p>
+      <h1 class="word">Lightened</h1>
+      <p class="lede">A laid-back room for rock and roll, indie and whatever you're making. Your engineer is included, the reverb is the room itself, and the final call is always yours.</p>
+      <div class="actions">
+        <a class="btn" href="#book">Book studio time</a>
+        <a class="btn ghost" href="#show">RSVP for October 24</a>
+      </div>
+
+      <div class="eras" role="group" aria-labelledby="eras-label">
+        <p id="eras-label" class="eras-label">Which record do you want to sound like?</p>
+        <div class="era-buttons">
+          <button type="button" data-era="60s" aria-pressed="false">60s</button>
+          <button type="button" data-era="70s" aria-pressed="true">70s</button>
+          <button type="button" data-era="80s" aria-pressed="false">80s</button>
+          <button type="button" data-era="90s" aria-pressed="false">90s</button>
+          <button type="button" data-era="00s" aria-pressed="false">2000s</button>
+        </div>
+        <p class="era-line" id="era-line" aria-live="polite">Warm, thick drums and guitars that sound like they came off tape.</p>
+        <p class="era-note">James keeps gear for each of these decades. Bring a reference track and he'll get you there.</p>
+      </div>
+    </section>
+
+    <section class="show" id="show" aria-labelledby="show-title">
+      <div class="poster">
+        <p class="poster-top">Lightened house show and live recording</p>
+        <h2 id="show-title" class="poster-date"><span>Saturday</span> October 24</h2>
+        <ul class="lineup" aria-label="Lineup">
+          <li>Jester King</li>
+          <li>Cosmic Peace</li>
+          <li class="tba">Plus one more band, announced soon</li>
+        </ul>
+        <p class="poster-foot">Nighttime show in South Austin. Address comes with your RSVP confirmation.</p>
+      </div>
+
+      <div class="show-copy">
+        <h3>Come hear the room</h3>
+        <p>This is the first night the studio opens its doors. Three bands play, we record every set, and James mixes and masters it afterward. Everyone who RSVPs gets the finished recording.</p>
+        <p>The cover is split between the bands. We're a residential street, so the loud part wraps up on time.</p>
+
+        <form class="form" id="rsvp-form" novalidate>
+          <div class="row">
+            <label for="r-name">Your name</label>
+            <input id="r-name" name="name" type="text" autocomplete="name" required maxlength="120">
+          </div>
+          <div class="row">
+            <label for="r-email">Email for your confirmation</label>
+            <input id="r-email" name="email" type="email" autocomplete="email" required maxlength="200">
+          </div>
+          <div class="row">
+            <label for="r-guests">How many people, including you?</label>
+            <select id="r-guests" name="guests">
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+            </select>
+          </div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="join_chat" checked> Add me to the Circle Limit community chat</label>
+            <label class="check"><input type="checkbox" name="is_artist"> I make music and might want to record here</label>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="r-site">Leave this empty</label><input id="r-site" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="btn" type="submit">RSVP</button>
+          <p class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="studio" id="studio" aria-labelledby="studio-title">
+      <h2 id="studio-title">The studio</h2>
+      <p class="section-lede">A home studio with the setup to track a full band live and still keep every player on their own channel.</p>
+      <dl class="rooms">
+        <div>
+          <dt>Live room</dt>
+          <dd>The whole band plays together in one room, and each instrument is captured separately so the mix stays flexible.</dd>
+        </div>
+        <div>
+          <dt>Drum room</dt>
+          <dd>Drums get their own room, which keeps them out of the other mics and sounds excellent on its own.</dd>
+        </div>
+        <div>
+          <dt>Natural reverb</dt>
+          <dd>The rooms are treated and tuned, so the space you hear on the record is the space you played in.</dd>
+        </div>
+        <div>
+          <dt>Gear for every era</dt>
+          <dd>Great mics, legendary gear, modern software, and a choice of amps. Bring your own if you'd rather.</dd>
+        </div>
+        <div>
+          <dt>Room to breathe</dt>
+          <dd>A living room inside and a place to relax outside between takes.</dd>
+        </div>
+        <div>
+          <dt>Coming from out of town</dt>
+          <dd>We have rooms for visiting artists. Book them ahead and we'll send you the Airbnb link.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="james" aria-labelledby="james-title">
+      <div class="james-head">
+        <h2 id="james-title">Your engineer is James Tuttle</h2>
+        <p class="pull">“I'll give you my suggestions, but the call is yours. My job is to capture your art the way you want it captured.”</p>
+      </div>
+      <div class="james-body">
+        <p>James has spent ten years mixing and producing records. He trained with Eddie Kramer, the engineer behind Jimi Hendrix, Led Zeppelin and David Bowie, and he brings that rock and roll ear to every session.</p>
+        <p>He's also a multi-instrumentalist. If your song needs a part nobody in the band plays, he can probably play it. He studied music performance and audio engineering at Western Washington University.</p>
+        <p class="credits"><span>Has worked with</span> Cosmic Peace, Dave Curley, Ghouls in the Basement, Jester King and others.</p>
+        <p class="genres"><span>Best at</span> rock and roll, psych rock, indie rock, indie pop, punk, new wave and shoegaze. Happy to work in any genre.</p>
+      </div>
+    </section>
+
+    <section class="rates" id="rates" aria-labelledby="rates-title">
+      <h2 id="rates-title">Rates</h2>
+      <table class="rate-table">
+        <caption class="sr">Lightened Productions rates</caption>
+        <thead>
+          <tr><th scope="col">Service</th><th scope="col">Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Studio time<span>Engineer included. One-hour minimum.</span></th><td>$70 an hour</td></tr>
+          <tr><th scope="row">Production<span>From arrangement to finished track.</span></th><td>Quoted per project</td></tr>
+          <tr><th scope="row">Mixing and mastering<span>Your tracks or ones recorded here.</span></th><td>Quoted per song</td></tr>
+          <tr><th scope="row">Lessons<span>Guitar, bass, drums, clarinet, some keys.</span></th><td>From $60 an hour</td></tr>
+          <tr><th scope="row">Play a house show<span>Debut what you recorded here.</span></th><td>Cover split</td></tr>
+        </tbody>
+      </table>
+      <ul class="terms">
+        <li>A 25% booking fee holds your time.</li>
+        <li>Cancel free up to 48 hours before.</li>
+        <li>Book at least 24 hours ahead.</li>
+      </ul>
+    </section>
+
+    <section class="book" id="book" aria-labelledby="book-title">
+      <div class="book-copy">
+        <h2 id="book-title">Book time</h2>
+        <p>Wednesday through Friday are open for sessions. For Saturday through Tuesday, send a request and James will find a time with you; those days open up after 5 pm.</p>
+        <p>James confirms every request himself and sends the booking-fee link to hold your time.</p>
+      </div>
+
+      <form class="form" id="book-form" novalidate>
+        <div class="row">
+          <label for="b-kind">What do you need?</label>
+          <select id="b-kind" name="kind">
+            <option value="studio">Studio time</option>
+            <option value="production">Production</option>
+            <option value="mixing">Mixing</option>
+            <option value="mastering">Mastering</option>
+            <option value="lessons">Lessons</option>
+            <option value="show">Play a house show</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="row two">
+          <div>
+            <label for="b-name">Name</label>
+            <input id="b-name" name="name" type="text" autocomplete="name" required maxlength="120">
+          </div>
+          <div>
+            <label for="b-project">Band or project</label>
+            <input id="b-project" name="project" type="text" maxlength="200">
+          </div>
+        </div>
+        <div class="row two">
+          <div>
+            <label for="b-email">Email</label>
+            <input id="b-email" name="email" type="email" autocomplete="email" required maxlength="200">
+          </div>
+          <div>
+            <label for="b-phone">Phone, for a text back</label>
+            <input id="b-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+          </div>
+        </div>
+        <div class="row two">
+          <div>
+            <label for="b-dates">Dates and times that work</label>
+            <input id="b-dates" name="preferred_dates" type="text" maxlength="300" placeholder="e.g. Thursday Nov 5, afternoon">
+          </div>
+          <div>
+            <label for="b-hours">Hours you think you need</label>
+            <input id="b-hours" name="hours" type="number" min="1" max="80" step="0.5" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <label for="b-message">Tell James about the music</label>
+          <textarea id="b-message" name="message" rows="4" maxlength="2000" placeholder="Songs, band size, a reference record you love"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="b-site">Leave this empty</label><input id="b-site" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="btn" type="submit">Send booking request</button>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-cl">
+      <p class="foot-mark">A Circle Limit Studios house</p>
+      <p>Circle Limit Studios is the brainchild of Andrew Escher and Kyle Moser: a creative house in Austin telling stories for the betterment of humanity, with an optimistic view of where the world can go. Lightened artists can bring in the rest of the house for music videos, shorts, marketing, show booking and management.</p>
+    </div>
+    <p class="foot-small">Lightened Productions, South Austin, Texas. Please keep it neighborly: we're on a residential street.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
